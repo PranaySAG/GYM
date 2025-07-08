@@ -1,8 +1,12 @@
 import React from 'react'
-
+import Navbar from '../component/navbar.jsx'
+import Hero from '../component/hero.jsx'
 function Home() {
   return (
-    <div>H</div>
+    <div className='container mx-auto max-w-7xl' >
+      <Navbar />
+      <Hero/>
+    </div>
   )
 }
 
