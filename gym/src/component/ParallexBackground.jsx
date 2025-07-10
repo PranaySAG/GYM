@@ -1,64 +1,71 @@
-import React from 'react'
+import { motion,useScroll, useSpring, useTransform } from 'motion/react';
+import React, { use } from 'react'
 
 function ParallaxBackground() {
-  
+  const {scrollYProgress } = useScroll();
+  const x = useSpring(scrollYProgress, {
+    damping: 100,
+  });
+  const mountain3y = useTransform(x, [0, 1], ['0%', '100%']);
+  const planetY = useTransform(x, [0, 1], ['0%', '-20%']);
+  const mountain2y = useTransform(x, [0, 1], ['0%', '60%']);
+  const mountain1y = useTransform(x, [0, 1], ['0%', '30%']);
   return (
     <section  className='absolute inset-0 bg-black/40'>
       <div className='relative h-screen overflow-y-hidden'>
         {/* background */}
-        <div className='absolute inset-0 w-full h-screen -z-50'
+        <motion.div className='absolute inset-0 w-full h-screen -z-50'
         style={{
             backgroundImage:  "url(/assets/bro.jpg)",
             backgroundSize: 'contain',
             backgroundPosition: 'bottom',
+      
         }}
-        ></div>
+        ></motion.div>
         {/* moutain */}
-        <div 
+        <motion.div 
         className='absolute inset-0 -z-40 '
         style={{
             backgroundImage: "url(/assets/name.png)",
             backgroundSize: 'contain',
             backgroundPosition: 'bottom',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-            backgroundBlendMode: 'overlay',
+            y: mountain3y,
         }}
-        ></div>
+        ></motion.div>
         {/* planet */}
-        <div className='absolute inset-0 w-full  -z-30'
+        <motion.div className='absolute inset-0 w-full  -z-30'
         style={{
             backgroundImage: "url(/assets/bgless.png)",
             backgroundSize: 'contain',
             backgroundPosition: 'left',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
             backgroundColor: 'rgba(0, 0, 0, 0.1 )',
             backgroundBlendMode: 'overlay',
+            y: planetY,
         }}
-        ></div>
+        ></motion.div>
         {/* moutain-layer-2 */}
-        <div className='absolute inset-0 w-full h-screen -z-20'
+        <motion.div className='absolute inset-0 w-full h-screen -z-20'
         style={{
             backgroundImage: "url(/assets/mountain-2.png)",
             backgroundSize: 'cover',
             backgroundPosition: 'bottom',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',  
-
+            backgroundRepeat: 'no-repeat', 
+            y: mountain2y,
         }}
-        ></div>
+        ></motion.div>
         {/* moutain-layer-1 */}
-        <div
+        <motion.div
          className='absolute inset-0 w-full h-screen -z-10'
         style={{
             backgroundImage: "url(/assets/mountain-1.png)",
             backgroundSize: 'cover',
             backgroundPosition: 'bottom',
             backgroundRepeat: 'no-repeat',
+            y: mountain1y,
         }}
-        ></div>
+        ></motion.div>
       </div>
   </section>
   )
