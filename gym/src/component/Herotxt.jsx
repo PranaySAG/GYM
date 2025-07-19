@@ -15,15 +15,15 @@ function Herotxt() {
             <motion.h1 className='text-3xl font-medium'
              variants={variants} 
             initial="hidden" animate="visible" 
-            transition={{ delay: 0.2 }} >Hey</motion.h1>
+            transition={{ delay: 0.2 }} > Hey</motion.h1>
             <div className='flex flex-col items-start'>
                 <motion.p 
                 variants={variants} 
                 initial="hidden"
                  animate="visible" 
                  transition={{ delay: 0.5 }}
-                  className='text-5xl font-medium text-neutral-300'>
-                    providing the best <br/> fitness experience for you
+                  className='text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-lime-200 z-1'>
+                    providing the best <br/> fitness experience <br /> for you
                 </motion.p>
                 <motion.div
                  variants={variants} 
@@ -37,6 +37,7 @@ function Herotxt() {
                 
             </div>
         </div>
+
         {/* for mobile view */}
         <div className='flex-col flex md:hidden space-y-6'>
             <motion.p
@@ -51,8 +52,8 @@ function Herotxt() {
                 initial="hidden"
                  animate="visible" 
                  transition={{ delay: 0.7 }}
-                className="text-5xl font-black text-neutral-300">BodyBulider</motion.p>
-                <motion.div><FlipWords words={['Bulk', 'Cut', 'Maintain']} className="text-5xl font-black text-neutral-300"/></motion.div>
+                className="text-5xl font-black text-neutral-300">BodyBuilder</motion.p>
+                <motion.div><FlipWords words={['Bulk', 'Cut', 'Maintain']} className="text-5xl font-black text-neutral-300 "/></motion.div>
                 <motion.p 
                  variants={variants} 
                 initial="hidden"

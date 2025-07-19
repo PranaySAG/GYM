@@ -5,8 +5,7 @@ import ParallaxBackground from './parallexBackground.jsx'
 import {OrbitControls ,Float } from '@react-three/drei'
 
 import { easing } from "maath";
-import Goku from './Goku.jsx'
-import Loader from './Loader.jsx'
+// import Loader from './Loader.jsx'
 import { useMediaQuery } from 'react-responsive'
 function Hero() {
  const  isMobile = useMediaQuery({ query: '(max-width: 853px)' })
@@ -14,7 +13,11 @@ function Hero() {
     <section className='flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space'>
       <Herotxt />
       <ParallaxBackground />
-      <figure className="absolute inset-0" style={{width:"100vw" ,height:"100vh"}}>
+      <div className='flex justify-end items-center absolute inset-60 z-10'>
+      <button className='bg-white text-black py-4 px-6 rounded-3xl hover:bg-lime-200 hover:text-blue-950  '>Join</button>
+      
+      </div>
+      {/* <figure className="absolute inset-0 z-12" style={{width:"100vw" ,height:"100vh"}}>
         <Canvas camera={{ position: [0, 1, 3], fov: 50 }}>
           <Suspense fallback={<Loader/>}>
           <Float>
@@ -24,7 +27,7 @@ function Hero() {
             </Suspense>
             <Rig />
         </Canvas>
-      </figure>
+      </figure> */}
     </section>
   )
 }
