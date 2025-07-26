@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../component/navbar.jsx'
-import Hero from '../component/hero.jsx'
+import Navbar from '../components/navbar.jsx'
+import Hero from '../components/Hero.jsx'
 import About from './about.jsx'
 import Projects from '../sections/Projects.jsx'
 

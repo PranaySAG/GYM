@@ -1,8 +1,8 @@
-import { Globe } from "../component/Globe.jsx";
-import Card from "./../component/Card.jsx";
+import { Globe } from "../components/Globe.jsx";
+import Card from "../components/Card.jsx";
 import { useRef } from "react";
-import  Copy  from "../component/Copy.jsx";
-import Framework from "../component/FrameWork.jsx";
+import  Copy  from "../components/Copy.jsx";
+import Framework from "../components/FrameWork.jsx";
 function About() {
   const grid2Container = useRef();
   return (
